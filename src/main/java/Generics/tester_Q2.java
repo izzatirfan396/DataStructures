@@ -11,10 +11,10 @@ package Generics;
 public class tester_Q2 {
     public static void main(String[] args) {
         
-        MyGeneric<String> strObj = new MyGeneric<>();
+        MyGeneric<String> strObj = new MyGeneric<>("Sarah");
         MyGeneric<Integer> intObj = new MyGeneric<>();
         
-        strObj.set("Sarah");
+       
         intObj.set(67);
         
         System.out.println("String : "+ strObj.get());
