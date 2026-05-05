@@ -11,26 +11,22 @@ import java.util.Scanner;
  * @author Izzat
  */
 public class CandyMachine {
-    private Dispenser candy;
-    private Dispenser chip;
-    private Dispenser gum ;
-    private Dispenser cookies ; 
+    private Dispenser []dispensers;
+  
     private CashRegister register ;
     
     public CandyMachine(){
-        candy = new Dispenser("Candy", 2.30 , 10);
-        chip = new Dispenser("Chip", 3.50 , 10);
-        gum = new Dispenser("Gum", 1.5 , 10);
-        cookies = new Dispenser("Cookies", 4 , 10);
+        dispensers=new Dispenser[]{new Dispenser("Candy", 2.30 , 10),new Dispenser("Chip", 3.50 , 10),new Dispenser("Gum", 1.5 , 10),
+        new Dispenser("Cookies", 4 , 10)};
+        
         register = new CashRegister();
     }
     
     public void showMenu(){
-    System.out.printf("1. %-10s RM %.2f\n", candy.getName(), candy.getPrice());
-    System.out.printf("2. %-10s RM %.2f\n", chip.getName(), chip.getPrice());
-    System.out.printf("3. %-10s RM %.2f\n", gum.getName(), gum.getPrice());
-    System.out.printf("4. %-10s RM %.2f\n", cookies.getName(), cookies.getPrice());
+        for (int i = 0; i < dispensers.length; i++) {
+    System.out.printf((i+1) + ". %-10s RM %.2f\n", dispensers[i].getName(), dispensers[i].getPrice());
     }
+}
     
     public void operate(){
         this.showMenu();
@@ -42,19 +38,19 @@ public class CandyMachine {
         
         switch (choice) {
             case 1 :
-                selected = candy ;
+                selected = dispensers[0] ;
                 break;
                 
             case 2 :
-                 selected = chip ;
+                 selected = dispensers[1];
                  break;
                  
             case 3 :
-                selected = gum ; 
+                selected = dispensers[2] ; 
                 break ;
                 
             case 4 :
-                selected = cookies ;
+                selected = dispensers[3] ;
                 break ;
                 
             default :

@@ -15,7 +15,7 @@ public class ArrayBag<T> implements BagInterface<T> {
     
     public ArrayBag(){
         DEFAULT_CAPACITY = 25;
-        bag = (T[]) new Object[DEFAULT_CAPACITY];
+        bag =  (T[]) new Object[DEFAULT_CAPACITY];
     }
     
     public int getCurrentSize(){
